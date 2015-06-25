@@ -12,21 +12,23 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.member_id)
+            出借人編號
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.book_id)
+            書目編號
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.date)
+            出借日期
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.book.name)
+            書名
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.member.name)
+            會員姓名
         </th>
-        <th></th>
+        <th>
+            選項
+        </th>
     </tr>
 
 @foreach (var item in Model) {
