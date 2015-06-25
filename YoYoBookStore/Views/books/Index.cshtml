@@ -1,0 +1,51 @@
+﻿@model IEnumerable<YoYoBookStore.Models.book>
+
+@{
+    ViewBag.Title = "幼幼書坊-本館藏書";
+}
+
+<h1></h1>
+<div class="breadcrumb alert-warning ">
+    <h4><strong>本館藏書</strong></h4>
+    <p>幼幼書坊藏書豐富，滿足您的需求。</p>
+</div>
+<table class="table">
+    <tr>
+        <th>
+           書名
+        </th>
+        <th>
+           作者
+        </th>
+        <th>
+            出借狀況
+        </th>
+        <th>
+            出借單編號
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.author)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.status)
+        </td>
+        <td>
+                    @Html.DisplayFor(modelItem => item.bookDetail.id)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>
